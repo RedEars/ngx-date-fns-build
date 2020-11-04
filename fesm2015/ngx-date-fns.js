@@ -125,6 +125,9 @@ import parseISO from 'date-fns/parseISO';
 
 class AddBusinessDaysPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addBusinessDays(date, amount);
     }
 }
@@ -142,6 +145,9 @@ AddBusinessDaysPipeModule.decorators = [
 
 class AddDaysPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addDays(date, amount);
     }
 }
@@ -159,6 +165,9 @@ AddDaysPipeModule.decorators = [
 
 class AddHoursPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addHours(date, amount);
     }
 }
@@ -176,6 +185,9 @@ AddHoursPipeModule.decorators = [
 
 class AddISOWeekYearsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addISOWeekYears(date, amount);
     }
 }
@@ -193,6 +205,9 @@ AddISOWeekYearsPipeModule.decorators = [
 
 class AddMillisecondsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addMilliseconds(date, amount);
     }
 }
@@ -210,6 +225,9 @@ AddMillisecondsPipeModule.decorators = [
 
 class AddMinutesPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addMinutes(date, amount);
     }
 }
@@ -227,6 +245,9 @@ AddMinutesPipeModule.decorators = [
 
 class AddMonthsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addMonths(date, amount);
     }
 }
@@ -244,6 +265,9 @@ AddMonthsPipeModule.decorators = [
 
 class AddQuartersPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addQuarters(date, amount);
     }
 }
@@ -261,6 +285,9 @@ AddQuartersPipeModule.decorators = [
 
 class AddSecondsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addSeconds(date, amount);
     }
 }
@@ -278,6 +305,9 @@ AddSecondsPipeModule.decorators = [
 
 class AddWeeksPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addWeeks(date, amount);
     }
 }
@@ -295,6 +325,9 @@ AddWeeksPipeModule.decorators = [
 
 class AddYearsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return addYears(date, amount);
     }
 }
@@ -312,6 +345,9 @@ AddYearsPipeModule.decorators = [
 
 class ClosestToPipe {
     transform(dateToCompare, datesArray) {
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return closestTo(dateToCompare, datesArray);
     }
 }
@@ -367,6 +403,9 @@ class FormatPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, dateFormat, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return format(date, dateFormat, calculateLocale(options, this.config));
     }
 }
@@ -388,6 +427,12 @@ FormatPipeModule.decorators = [
 
 class DifferenceInCalendarDaysPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarDays(dateLeft, dateRight);
     }
 }
@@ -405,6 +450,12 @@ DifferenceInCalendarDaysPipeModule.decorators = [
 
 class DifferenceInCalendarISOWeeksPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarISOWeeks(dateLeft, dateRight);
     }
 }
@@ -422,6 +473,12 @@ DifferenceInCalendarISOWeeksPipeModule.decorators = [
 
 class DifferenceInCalendarISOWeekYearsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarISOWeekYears(dateLeft, dateRight);
     }
 }
@@ -439,6 +496,12 @@ DifferenceInCalendarISOWeekYearsPipeModule.decorators = [
 
 class DifferenceInCalendarMonthsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarMonths(dateLeft, dateRight);
     }
 }
@@ -456,6 +519,12 @@ DifferenceInCalendarMonthsPipeModule.decorators = [
 
 class DifferenceInCalendarWeeksPipe {
     transform(dateLeft, dateRight, options) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarWeeks(dateLeft, dateRight, options);
     }
 }
@@ -473,6 +542,12 @@ DifferenceInCalendarWeeksPipeModule.decorators = [
 
 class DifferenceInCalendarYearsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarYears(dateLeft, dateRight);
     }
 }
@@ -490,6 +565,12 @@ DifferenceInCalendarYearsPipeModule.decorators = [
 
 class DifferenceInDaysPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInDays(dateLeft, dateRight);
     }
 }
@@ -507,6 +588,12 @@ DifferenceInDaysPipeModule.decorators = [
 
 class DifferenceInHoursPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInHours(dateLeft, dateRight);
     }
 }
@@ -524,6 +611,12 @@ DifferenceInHoursPipeModule.decorators = [
 
 class DifferenceInISOWeekYearsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInISOWeekYears(dateLeft, dateRight);
     }
 }
@@ -541,6 +634,12 @@ DifferenceInISOWeekYearsPipeModule.decorators = [
 
 class DifferenceInMillisecondsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInMilliseconds(dateLeft, dateRight);
     }
 }
@@ -558,6 +657,12 @@ DifferenceInMillisecondsPipeModule.decorators = [
 
 class DifferenceInMinutesPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInMinutes(dateLeft, dateRight);
     }
 }
@@ -575,6 +680,12 @@ DifferenceInMinutesPipeModule.decorators = [
 
 class DifferenceInMonthsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInMonths(dateLeft, dateRight);
     }
 }
@@ -592,6 +703,12 @@ DifferenceInMonthsPipeModule.decorators = [
 
 class DifferenceInQuartersPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInQuarters(dateLeft, dateRight);
     }
 }
@@ -609,6 +726,12 @@ DifferenceInQuartersPipeModule.decorators = [
 
 class DifferenceInSecondsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInSeconds(dateLeft, dateRight);
     }
 }
@@ -626,6 +749,12 @@ DifferenceInSecondsPipeModule.decorators = [
 
 class DifferenceInWeeksPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInWeeks(dateLeft, dateRight);
     }
 }
@@ -643,6 +772,12 @@ DifferenceInWeeksPipeModule.decorators = [
 
 class DifferenceInYearsPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInYears(dateLeft, dateRight);
     }
 }
@@ -660,6 +795,12 @@ DifferenceInYearsPipeModule.decorators = [
 
 class DifferenceInBusinessDaysPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInBusinessDays(dateLeft, dateRight);
     }
 }
@@ -685,6 +826,12 @@ class FormatDistancePipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, dateToCompare, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return formatDistance(date, dateToCompare, calculateLocale(options, this.config));
     }
 }
@@ -714,6 +861,12 @@ class FormatDistanceStrictPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, dateToCompare, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return formatDistanceStrict(date, dateToCompare, calculateLocale(options, this.config));
     }
 }
@@ -743,6 +896,9 @@ class FormatDistanceToNowPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return formatDistanceToNow(date, calculateLocale(options, this.config));
     }
 }
@@ -764,6 +920,9 @@ FormatDistanceToNowPipeModule.decorators = [
 
 class EndOfDayPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfDay(date);
     }
 }
@@ -781,6 +940,9 @@ EndOfDayPipeModule.decorators = [
 
 class EndOfHourPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfHour(date);
     }
 }
@@ -798,6 +960,9 @@ EndOfHourPipeModule.decorators = [
 
 class EndOfISOWeekPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfISOWeek(date);
     }
 }
@@ -815,6 +980,9 @@ EndOfISOWeekPipeModule.decorators = [
 
 class EndOfISOWeekYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfISOWeekYear(date);
     }
 }
@@ -832,6 +1000,9 @@ EndOfISOWeekYearPipeModule.decorators = [
 
 class EndOfMinutePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfMinute(date);
     }
 }
@@ -849,6 +1020,9 @@ EndOfMinutePipeModule.decorators = [
 
 class EndOfMonthPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfMonth(date);
     }
 }
@@ -866,6 +1040,9 @@ EndOfMonthPipeModule.decorators = [
 
 class EndOfQuarterPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfQuarter(date);
     }
 }
@@ -883,6 +1060,9 @@ EndOfQuarterPipeModule.decorators = [
 
 class EndOfSecondPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfSecond(date);
     }
 }
@@ -934,6 +1114,9 @@ EndOfTomorrowPipeModule.decorators = [
 
 class EndOfWeekPipe {
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfWeek(date, options);
     }
 }
@@ -951,6 +1134,9 @@ EndOfWeekPipeModule.decorators = [
 
 class EndOfYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return endOfYear(date);
     }
 }
@@ -985,6 +1171,9 @@ EndOfYesterdayPipeModule.decorators = [
 
 class GetDatePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDate(date);
     }
 }
@@ -1002,6 +1191,9 @@ GetDatePipeModule.decorators = [
 
 class GetDayOfYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDayOfYear(date);
     }
 }
@@ -1019,6 +1211,9 @@ GetDayOfYearPipeModule.decorators = [
 
 class GetDayPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDay(date);
     }
 }
@@ -1036,6 +1231,9 @@ GetDayPipeModule.decorators = [
 
 class GetDaysInMonthPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDaysInMonth(date);
     }
 }
@@ -1053,6 +1251,9 @@ GetDaysInMonthPipeModule.decorators = [
 
 class GetDaysInYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDaysInYear(date);
     }
 }
@@ -1070,6 +1271,9 @@ GetDaysInYearPipeModule.decorators = [
 
 class GetHoursPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getHours(date);
     }
 }
@@ -1087,6 +1291,9 @@ GetHoursPipeModule.decorators = [
 
 class GetISODayPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getISODay(date);
     }
 }
@@ -1104,6 +1311,9 @@ GetISODayPipeModule.decorators = [
 
 class GetISOWeekPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getISOWeek(date);
     }
 }
@@ -1121,6 +1331,9 @@ GetISOWeekPipeModule.decorators = [
 
 class GetISOWeeksInYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getISOWeeksInYear(date);
     }
 }
@@ -1138,6 +1351,9 @@ GetISOWeeksInYearPipeModule.decorators = [
 
 class GetMillisecondsPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getMilliseconds(date);
     }
 }
@@ -1155,6 +1371,9 @@ GetMillisecondsPipeModule.decorators = [
 
 class GetMinutesPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getMinutes(date);
     }
 }
@@ -1172,6 +1391,9 @@ GetMinutesPipeModule.decorators = [
 
 class GetMonthPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getMonth(date);
     }
 }
@@ -1206,6 +1428,9 @@ GetOverlappingDaysInIntervalsPipeModule.decorators = [
 
 class GetQuarterPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getQuarter(date);
     }
 }
@@ -1223,6 +1448,9 @@ GetQuarterPipeModule.decorators = [
 
 class GetSecondsPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getSeconds(date);
     }
 }
@@ -1240,6 +1468,9 @@ GetSecondsPipeModule.decorators = [
 
 class GetTimePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getTime(date);
     }
 }
@@ -1257,6 +1488,9 @@ GetTimePipeModule.decorators = [
 
 class GetYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getYear(date);
     }
 }
@@ -1274,6 +1508,9 @@ GetYearPipeModule.decorators = [
 
 class GetUnixTimePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getUnixTime(date);
     }
 }
@@ -1299,6 +1536,9 @@ class GetWeekPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeek(date, calculateLocale(options, this.config));
     }
 }
@@ -1328,6 +1568,9 @@ class GetWeekOfMonthPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeekOfMonth(date, calculateLocale(options, this.config));
     }
 }
@@ -1357,6 +1600,9 @@ class GetWeeksInMonthPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeeksInMonth(date, calculateLocale(options, this.config));
     }
 }
@@ -1378,6 +1624,9 @@ GetWeeksInMonthPipeModule.decorators = [
 
 class GetDecadePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getDecade(date);
     }
 }
@@ -1403,6 +1652,9 @@ class GetWeekYearPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeekYear(date, calculateLocale(options, this.config));
     }
 }
@@ -1424,6 +1676,9 @@ GetWeekYearPipeModule.decorators = [
 
 class LastDayOfISOWeekPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfISOWeek(date);
     }
 }
@@ -1441,6 +1696,9 @@ LastDayOfISOWeekPipeModule.decorators = [
 
 class LastDayOfISOWeekYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfISOWeekYear(date);
     }
 }
@@ -1458,6 +1716,9 @@ LastDayOfISOWeekYearPipeModule.decorators = [
 
 class LastDayOfMonthPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfMonth(date);
     }
 }
@@ -1475,6 +1736,9 @@ LastDayOfMonthPipeModule.decorators = [
 
 class LastDayOfQuarterPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfQuarter(date);
     }
 }
@@ -1500,6 +1764,9 @@ class LastDayOfWeekPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfWeek(date, calculateLocale(options, this.config));
     }
 }
@@ -1521,6 +1788,9 @@ LastDayOfWeekPipeModule.decorators = [
 
 class LastDayOfYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfYear(date);
     }
 }
@@ -1538,6 +1808,9 @@ LastDayOfYearPipeModule.decorators = [
 
 class LastDayOfDecadePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfDecade(date);
     }
 }
@@ -1589,6 +1862,9 @@ MinPipeModule.decorators = [
 
 class StartOfDayPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfDay(date);
     }
 }
@@ -1606,6 +1882,9 @@ StartOfDayPipeModule.decorators = [
 
 class StartOfHourPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfHour(date);
     }
 }
@@ -1623,6 +1902,9 @@ StartOfHourPipeModule.decorators = [
 
 class StartOfISOWeekPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfISOWeek(date);
     }
 }
@@ -1640,6 +1922,9 @@ StartOfISOWeekPipeModule.decorators = [
 
 class StartOfISOWeekYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfISOWeekYear(date);
     }
 }
@@ -1657,6 +1942,9 @@ StartOfISOWeekYearPipeModule.decorators = [
 
 class StartOfMinutePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfMinute(date);
     }
 }
@@ -1674,6 +1962,9 @@ StartOfMinutePipeModule.decorators = [
 
 class StartOfMonthPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfMonth(date);
     }
 }
@@ -1691,6 +1982,9 @@ StartOfMonthPipeModule.decorators = [
 
 class StartOfQuarterPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfQuarter(date);
     }
 }
@@ -1708,6 +2002,9 @@ StartOfQuarterPipeModule.decorators = [
 
 class StartOfSecondPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfSecond(date);
     }
 }
@@ -1767,6 +2064,9 @@ class StartOfWeekPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfWeek(date, calculateLocale(options, this.config));
     }
 }
@@ -1788,6 +2088,9 @@ StartOfWeekPipeModule.decorators = [
 
 class StartOfYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfYear(date);
     }
 }
@@ -1822,6 +2125,9 @@ StartOfYesterdayPipeModule.decorators = [
 
 class StartOfDecadePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfDecade(date);
     }
 }
@@ -1847,6 +2153,9 @@ class StartOfWeekYearPipe {
         this.localeChanged$.unsubscribe();
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfWeekYear(date, calculateLocale(options, this.config));
     }
 }
@@ -1868,6 +2177,9 @@ StartOfWeekYearPipeModule.decorators = [
 
 class SubDaysPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subDays(date, amount);
     }
 }
@@ -1885,6 +2197,9 @@ SubDaysPipeModule.decorators = [
 
 class SubHoursPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subHours(date, amount);
     }
 }
@@ -1902,6 +2217,9 @@ SubHoursPipeModule.decorators = [
 
 class SubISOWeekYearsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subISOWeekYears(date, amount);
     }
 }
@@ -1919,6 +2237,9 @@ SubISOWeekYearsPipeModule.decorators = [
 
 class SubMillisecondsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subMilliseconds(date, amount);
     }
 }
@@ -1936,6 +2257,9 @@ SubMillisecondsPipeModule.decorators = [
 
 class SubMinutesPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subMinutes(date, amount);
     }
 }
@@ -1953,6 +2277,9 @@ SubMinutesPipeModule.decorators = [
 
 class SubMonthsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subMonths(date, amount);
     }
 }
@@ -1970,6 +2297,9 @@ SubMonthsPipeModule.decorators = [
 
 class SubQuartersPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subQuarters(date, amount);
     }
 }
@@ -1987,6 +2317,9 @@ SubQuartersPipeModule.decorators = [
 
 class SubSecondsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subSeconds(date, amount);
     }
 }
@@ -2004,6 +2337,9 @@ SubSecondsPipeModule.decorators = [
 
 class SubWeeksPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subWeeks(date, amount);
     }
 }
@@ -2021,6 +2357,9 @@ SubWeeksPipeModule.decorators = [
 
 class SubYearsPipe {
     transform(date, amount) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return subYears(date, amount);
     }
 }
@@ -2038,6 +2377,12 @@ SubYearsPipeModule.decorators = [
 
 class IsAfterPipe {
     transform(date, dateToCompare) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return isAfter(date, dateToCompare);
     }
 }
@@ -2055,6 +2400,12 @@ IsAfterPipeModule.decorators = [
 
 class IsBeforePipe {
     transform(date, dateToCompare) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return isBefore(date, dateToCompare);
     }
 }
@@ -2072,6 +2423,9 @@ IsBeforePipeModule.decorators = [
 
 class IsDatePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isDate(date);
     }
 }
@@ -2089,6 +2443,12 @@ IsDatePipeModule.decorators = [
 
 class IsEqualPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return isEqual(dateLeft, dateRight);
     }
 }
@@ -2106,6 +2466,9 @@ IsEqualPipeModule.decorators = [
 
 class IsFuturePipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isFuture(date);
     }
 }
@@ -2123,6 +2486,9 @@ IsFuturePipeModule.decorators = [
 
 class IsPastPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isPast(date);
     }
 }
@@ -2140,6 +2506,9 @@ IsPastPipeModule.decorators = [
 
 class IsValidPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isValid(date);
     }
 }
@@ -2157,6 +2526,9 @@ IsValidPipeModule.decorators = [
 
 class IsTodayPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isToday(date);
     }
 }
@@ -2174,6 +2546,9 @@ IsTodayPipeModule.decorators = [
 
 class IsTomorrowPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isTomorrow(date);
     }
 }
@@ -2191,6 +2566,9 @@ IsTomorrowPipeModule.decorators = [
 
 class IsWeekendPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return isWeekend(date);
     }
 }
@@ -2208,6 +2586,12 @@ IsWeekendPipeModule.decorators = [
 
 class IsSameMonthPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return isSameMonth(dateLeft, dateRight);
     }
 }
@@ -2295,6 +2679,12 @@ WeekdayNamePipeModule.decorators = [
 
 class IsSameYearPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return isSameYear(dateLeft, dateRight);
     }
 }
@@ -2312,6 +2702,12 @@ IsSameYearPipeModule.decorators = [
 
 class DifferenceInCalendarQuartersPipe {
     transform(dateLeft, dateRight) {
+        if (typeof dateLeft === 'string') {
+            dateLeft = new Date(dateLeft);
+        }
+        if (typeof dateRight === 'string') {
+            dateRight = new Date(dateRight);
+        }
         return differenceInCalendarQuarters(dateLeft, dateRight);
     }
 }
@@ -2329,6 +2725,9 @@ DifferenceInCalendarQuartersPipeModule.decorators = [
 
 class GetISOWeekYearPipe {
     transform(date) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getISOWeekYear(date);
     }
 }
@@ -2375,11 +2774,17 @@ class FormatRelativePurePipe {
         this.config = config;
     }
     transform(date, baseDate = new Date(), options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof baseDate === 'string') {
+            baseDate = new Date(baseDate);
+        }
         const formatRelativeLocale = {
             lastWeek: 'eeee',
-            yesterday: '\'Gestern\'',
-            today: '\'Heute\'',
-            tomorrow: '\'Morgen\'',
+            yesterday: "'Gestern'",
+            today: "'Heute'",
+            tomorrow: "'Morgen'",
             nextWeek: 'eeee',
             other: 'eeee'
         };
@@ -2407,6 +2812,12 @@ class FormatDistancePurePipe {
         this.config = config;
     }
     transform(date, dateToCompare, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return formatDistance(date, dateToCompare, calculateLocale(options, this.config));
     }
 }
@@ -2430,6 +2841,12 @@ class FormatDistanceStrictPurePipe {
         this.config = config;
     }
     transform(date, dateToCompare, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
+        if (typeof dateToCompare === 'string') {
+            dateToCompare = new Date(dateToCompare);
+        }
         return formatDistanceStrict(date, dateToCompare, calculateLocale(options, this.config));
     }
 }
@@ -2453,6 +2870,9 @@ class FormatDistanceToNowPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return formatDistanceToNow(date, calculateLocale(options, this.config));
     }
 }
@@ -2476,6 +2896,9 @@ class GetWeekPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeek(date, calculateLocale(options, this.config));
     }
 }
@@ -2499,6 +2922,9 @@ class GetWeekOfMonthPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeekOfMonth(date, calculateLocale(options, this.config));
     }
 }
@@ -2522,6 +2948,9 @@ class GetWeeksInMonthPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeeksInMonth(date, calculateLocale(options, this.config));
     }
 }
@@ -2545,6 +2974,9 @@ class GetWeekYearPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return getWeekYear(date, calculateLocale(options, this.config));
     }
 }
@@ -2568,6 +3000,9 @@ class StartOfWeekPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfWeek(date, calculateLocale(options, this.config));
     }
 }
@@ -2591,6 +3026,9 @@ class StartOfWeekYearPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return startOfWeekYear(date, calculateLocale(options, this.config));
     }
 }
@@ -2614,6 +3052,9 @@ class LastDayOfWeekPurePipe {
         this.config = config;
     }
     transform(date, options) {
+        if (typeof date === 'string') {
+            date = new Date(date);
+        }
         return lastDayOfWeek(date, calculateLocale(options, this.config));
     }
 }

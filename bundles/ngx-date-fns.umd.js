@@ -131,6 +131,9 @@
         function AddBusinessDaysPipe() {
         }
         AddBusinessDaysPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addBusinessDays(date, amount);
         };
         return AddBusinessDaysPipe;
@@ -154,6 +157,9 @@
         function AddDaysPipe() {
         }
         AddDaysPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addDays(date, amount);
         };
         return AddDaysPipe;
@@ -177,6 +183,9 @@
         function AddHoursPipe() {
         }
         AddHoursPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addHours(date, amount);
         };
         return AddHoursPipe;
@@ -200,6 +209,9 @@
         function AddISOWeekYearsPipe() {
         }
         AddISOWeekYearsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addISOWeekYears(date, amount);
         };
         return AddISOWeekYearsPipe;
@@ -223,6 +235,9 @@
         function AddMillisecondsPipe() {
         }
         AddMillisecondsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addMilliseconds(date, amount);
         };
         return AddMillisecondsPipe;
@@ -246,6 +261,9 @@
         function AddMinutesPipe() {
         }
         AddMinutesPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addMinutes(date, amount);
         };
         return AddMinutesPipe;
@@ -269,6 +287,9 @@
         function AddMonthsPipe() {
         }
         AddMonthsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addMonths(date, amount);
         };
         return AddMonthsPipe;
@@ -292,6 +313,9 @@
         function AddQuartersPipe() {
         }
         AddQuartersPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addQuarters(date, amount);
         };
         return AddQuartersPipe;
@@ -315,6 +339,9 @@
         function AddSecondsPipe() {
         }
         AddSecondsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addSeconds(date, amount);
         };
         return AddSecondsPipe;
@@ -338,6 +365,9 @@
         function AddWeeksPipe() {
         }
         AddWeeksPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addWeeks(date, amount);
         };
         return AddWeeksPipe;
@@ -361,6 +391,9 @@
         function AddYearsPipe() {
         }
         AddYearsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return addYears(date, amount);
         };
         return AddYearsPipe;
@@ -384,6 +417,9 @@
         function ClosestToPipe() {
         }
         ClosestToPipe.prototype.transform = function (dateToCompare, datesArray) {
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return closestTo(dateToCompare, datesArray);
         };
         return ClosestToPipe;
@@ -445,6 +481,9 @@
             this.localeChanged$.unsubscribe();
         };
         FormatPipe.prototype.transform = function (date, dateFormat, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return format(date, dateFormat, calculateLocale(options, this.config));
         };
         return FormatPipe;
@@ -472,6 +511,12 @@
         function DifferenceInCalendarDaysPipe() {
         }
         DifferenceInCalendarDaysPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarDays(dateLeft, dateRight);
         };
         return DifferenceInCalendarDaysPipe;
@@ -495,6 +540,12 @@
         function DifferenceInCalendarISOWeeksPipe() {
         }
         DifferenceInCalendarISOWeeksPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarISOWeeks(dateLeft, dateRight);
         };
         return DifferenceInCalendarISOWeeksPipe;
@@ -518,6 +569,12 @@
         function DifferenceInCalendarISOWeekYearsPipe() {
         }
         DifferenceInCalendarISOWeekYearsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarISOWeekYears(dateLeft, dateRight);
         };
         return DifferenceInCalendarISOWeekYearsPipe;
@@ -541,6 +598,12 @@
         function DifferenceInCalendarMonthsPipe() {
         }
         DifferenceInCalendarMonthsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarMonths(dateLeft, dateRight);
         };
         return DifferenceInCalendarMonthsPipe;
@@ -564,6 +627,12 @@
         function DifferenceInCalendarWeeksPipe() {
         }
         DifferenceInCalendarWeeksPipe.prototype.transform = function (dateLeft, dateRight, options) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarWeeks(dateLeft, dateRight, options);
         };
         return DifferenceInCalendarWeeksPipe;
@@ -587,6 +656,12 @@
         function DifferenceInCalendarYearsPipe() {
         }
         DifferenceInCalendarYearsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarYears(dateLeft, dateRight);
         };
         return DifferenceInCalendarYearsPipe;
@@ -610,6 +685,12 @@
         function DifferenceInDaysPipe() {
         }
         DifferenceInDaysPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInDays(dateLeft, dateRight);
         };
         return DifferenceInDaysPipe;
@@ -633,6 +714,12 @@
         function DifferenceInHoursPipe() {
         }
         DifferenceInHoursPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInHours(dateLeft, dateRight);
         };
         return DifferenceInHoursPipe;
@@ -656,6 +743,12 @@
         function DifferenceInISOWeekYearsPipe() {
         }
         DifferenceInISOWeekYearsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInISOWeekYears(dateLeft, dateRight);
         };
         return DifferenceInISOWeekYearsPipe;
@@ -679,6 +772,12 @@
         function DifferenceInMillisecondsPipe() {
         }
         DifferenceInMillisecondsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInMilliseconds(dateLeft, dateRight);
         };
         return DifferenceInMillisecondsPipe;
@@ -702,6 +801,12 @@
         function DifferenceInMinutesPipe() {
         }
         DifferenceInMinutesPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInMinutes(dateLeft, dateRight);
         };
         return DifferenceInMinutesPipe;
@@ -725,6 +830,12 @@
         function DifferenceInMonthsPipe() {
         }
         DifferenceInMonthsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInMonths(dateLeft, dateRight);
         };
         return DifferenceInMonthsPipe;
@@ -748,6 +859,12 @@
         function DifferenceInQuartersPipe() {
         }
         DifferenceInQuartersPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInQuarters(dateLeft, dateRight);
         };
         return DifferenceInQuartersPipe;
@@ -771,6 +888,12 @@
         function DifferenceInSecondsPipe() {
         }
         DifferenceInSecondsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInSeconds(dateLeft, dateRight);
         };
         return DifferenceInSecondsPipe;
@@ -794,6 +917,12 @@
         function DifferenceInWeeksPipe() {
         }
         DifferenceInWeeksPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInWeeks(dateLeft, dateRight);
         };
         return DifferenceInWeeksPipe;
@@ -817,6 +946,12 @@
         function DifferenceInYearsPipe() {
         }
         DifferenceInYearsPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInYears(dateLeft, dateRight);
         };
         return DifferenceInYearsPipe;
@@ -840,6 +975,12 @@
         function DifferenceInBusinessDaysPipe() {
         }
         DifferenceInBusinessDaysPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInBusinessDays(dateLeft, dateRight);
         };
         return DifferenceInBusinessDaysPipe;
@@ -870,6 +1011,12 @@
             this.localeChanged$.unsubscribe();
         };
         FormatDistancePipe.prototype.transform = function (date, dateToCompare, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return formatDistance(date, dateToCompare, calculateLocale(options, this.config));
         };
         return FormatDistancePipe;
@@ -904,6 +1051,12 @@
             this.localeChanged$.unsubscribe();
         };
         FormatDistanceStrictPipe.prototype.transform = function (date, dateToCompare, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return formatDistanceStrict(date, dateToCompare, calculateLocale(options, this.config));
         };
         return FormatDistanceStrictPipe;
@@ -938,6 +1091,9 @@
             this.localeChanged$.unsubscribe();
         };
         FormatDistanceToNowPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return formatDistanceToNow(date, calculateLocale(options, this.config));
         };
         return FormatDistanceToNowPipe;
@@ -965,6 +1121,9 @@
         function EndOfDayPipe() {
         }
         EndOfDayPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfDay(date);
         };
         return EndOfDayPipe;
@@ -988,6 +1147,9 @@
         function EndOfHourPipe() {
         }
         EndOfHourPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfHour(date);
         };
         return EndOfHourPipe;
@@ -1011,6 +1173,9 @@
         function EndOfISOWeekPipe() {
         }
         EndOfISOWeekPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfISOWeek(date);
         };
         return EndOfISOWeekPipe;
@@ -1034,6 +1199,9 @@
         function EndOfISOWeekYearPipe() {
         }
         EndOfISOWeekYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfISOWeekYear(date);
         };
         return EndOfISOWeekYearPipe;
@@ -1057,6 +1225,9 @@
         function EndOfMinutePipe() {
         }
         EndOfMinutePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfMinute(date);
         };
         return EndOfMinutePipe;
@@ -1080,6 +1251,9 @@
         function EndOfMonthPipe() {
         }
         EndOfMonthPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfMonth(date);
         };
         return EndOfMonthPipe;
@@ -1103,6 +1277,9 @@
         function EndOfQuarterPipe() {
         }
         EndOfQuarterPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfQuarter(date);
         };
         return EndOfQuarterPipe;
@@ -1126,6 +1303,9 @@
         function EndOfSecondPipe() {
         }
         EndOfSecondPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfSecond(date);
         };
         return EndOfSecondPipe;
@@ -1195,6 +1375,9 @@
         function EndOfWeekPipe() {
         }
         EndOfWeekPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfWeek(date, options);
         };
         return EndOfWeekPipe;
@@ -1218,6 +1401,9 @@
         function EndOfYearPipe() {
         }
         EndOfYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return endOfYear(date);
         };
         return EndOfYearPipe;
@@ -1264,6 +1450,9 @@
         function GetDatePipe() {
         }
         GetDatePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDate(date);
         };
         return GetDatePipe;
@@ -1287,6 +1476,9 @@
         function GetDayOfYearPipe() {
         }
         GetDayOfYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDayOfYear(date);
         };
         return GetDayOfYearPipe;
@@ -1310,6 +1502,9 @@
         function GetDayPipe() {
         }
         GetDayPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDay(date);
         };
         return GetDayPipe;
@@ -1333,6 +1528,9 @@
         function GetDaysInMonthPipe() {
         }
         GetDaysInMonthPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDaysInMonth(date);
         };
         return GetDaysInMonthPipe;
@@ -1356,6 +1554,9 @@
         function GetDaysInYearPipe() {
         }
         GetDaysInYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDaysInYear(date);
         };
         return GetDaysInYearPipe;
@@ -1379,6 +1580,9 @@
         function GetHoursPipe() {
         }
         GetHoursPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getHours(date);
         };
         return GetHoursPipe;
@@ -1402,6 +1606,9 @@
         function GetISODayPipe() {
         }
         GetISODayPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getISODay(date);
         };
         return GetISODayPipe;
@@ -1425,6 +1632,9 @@
         function GetISOWeekPipe() {
         }
         GetISOWeekPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getISOWeek(date);
         };
         return GetISOWeekPipe;
@@ -1448,6 +1658,9 @@
         function GetISOWeeksInYearPipe() {
         }
         GetISOWeeksInYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getISOWeeksInYear(date);
         };
         return GetISOWeeksInYearPipe;
@@ -1471,6 +1684,9 @@
         function GetMillisecondsPipe() {
         }
         GetMillisecondsPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getMilliseconds(date);
         };
         return GetMillisecondsPipe;
@@ -1494,6 +1710,9 @@
         function GetMinutesPipe() {
         }
         GetMinutesPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getMinutes(date);
         };
         return GetMinutesPipe;
@@ -1517,6 +1736,9 @@
         function GetMonthPipe() {
         }
         GetMonthPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getMonth(date);
         };
         return GetMonthPipe;
@@ -1563,6 +1785,9 @@
         function GetQuarterPipe() {
         }
         GetQuarterPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getQuarter(date);
         };
         return GetQuarterPipe;
@@ -1586,6 +1811,9 @@
         function GetSecondsPipe() {
         }
         GetSecondsPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getSeconds(date);
         };
         return GetSecondsPipe;
@@ -1609,6 +1837,9 @@
         function GetTimePipe() {
         }
         GetTimePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getTime(date);
         };
         return GetTimePipe;
@@ -1632,6 +1863,9 @@
         function GetYearPipe() {
         }
         GetYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getYear(date);
         };
         return GetYearPipe;
@@ -1655,6 +1889,9 @@
         function GetUnixTimePipe() {
         }
         GetUnixTimePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getUnixTime(date);
         };
         return GetUnixTimePipe;
@@ -1685,6 +1922,9 @@
             this.localeChanged$.unsubscribe();
         };
         GetWeekPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeek(date, calculateLocale(options, this.config));
         };
         return GetWeekPipe;
@@ -1719,6 +1959,9 @@
             this.localeChanged$.unsubscribe();
         };
         GetWeekOfMonthPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeekOfMonth(date, calculateLocale(options, this.config));
         };
         return GetWeekOfMonthPipe;
@@ -1753,6 +1996,9 @@
             this.localeChanged$.unsubscribe();
         };
         GetWeeksInMonthPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeeksInMonth(date, calculateLocale(options, this.config));
         };
         return GetWeeksInMonthPipe;
@@ -1780,6 +2026,9 @@
         function GetDecadePipe() {
         }
         GetDecadePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getDecade(date);
         };
         return GetDecadePipe;
@@ -1810,6 +2059,9 @@
             this.localeChanged$.unsubscribe();
         };
         GetWeekYearPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeekYear(date, calculateLocale(options, this.config));
         };
         return GetWeekYearPipe;
@@ -1837,6 +2089,9 @@
         function LastDayOfISOWeekPipe() {
         }
         LastDayOfISOWeekPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfISOWeek(date);
         };
         return LastDayOfISOWeekPipe;
@@ -1860,6 +2115,9 @@
         function LastDayOfISOWeekYearPipe() {
         }
         LastDayOfISOWeekYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfISOWeekYear(date);
         };
         return LastDayOfISOWeekYearPipe;
@@ -1883,6 +2141,9 @@
         function LastDayOfMonthPipe() {
         }
         LastDayOfMonthPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfMonth(date);
         };
         return LastDayOfMonthPipe;
@@ -1906,6 +2167,9 @@
         function LastDayOfQuarterPipe() {
         }
         LastDayOfQuarterPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfQuarter(date);
         };
         return LastDayOfQuarterPipe;
@@ -1936,6 +2200,9 @@
             this.localeChanged$.unsubscribe();
         };
         LastDayOfWeekPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfWeek(date, calculateLocale(options, this.config));
         };
         return LastDayOfWeekPipe;
@@ -1963,6 +2230,9 @@
         function LastDayOfYearPipe() {
         }
         LastDayOfYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfYear(date);
         };
         return LastDayOfYearPipe;
@@ -1986,6 +2256,9 @@
         function LastDayOfDecadePipe() {
         }
         LastDayOfDecadePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfDecade(date);
         };
         return LastDayOfDecadePipe;
@@ -2055,6 +2328,9 @@
         function StartOfDayPipe() {
         }
         StartOfDayPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfDay(date);
         };
         return StartOfDayPipe;
@@ -2078,6 +2354,9 @@
         function StartOfHourPipe() {
         }
         StartOfHourPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfHour(date);
         };
         return StartOfHourPipe;
@@ -2101,6 +2380,9 @@
         function StartOfISOWeekPipe() {
         }
         StartOfISOWeekPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfISOWeek(date);
         };
         return StartOfISOWeekPipe;
@@ -2124,6 +2406,9 @@
         function StartOfISOWeekYearPipe() {
         }
         StartOfISOWeekYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfISOWeekYear(date);
         };
         return StartOfISOWeekYearPipe;
@@ -2147,6 +2432,9 @@
         function StartOfMinutePipe() {
         }
         StartOfMinutePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfMinute(date);
         };
         return StartOfMinutePipe;
@@ -2170,6 +2458,9 @@
         function StartOfMonthPipe() {
         }
         StartOfMonthPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfMonth(date);
         };
         return StartOfMonthPipe;
@@ -2193,6 +2484,9 @@
         function StartOfQuarterPipe() {
         }
         StartOfQuarterPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfQuarter(date);
         };
         return StartOfQuarterPipe;
@@ -2216,6 +2510,9 @@
         function StartOfSecondPipe() {
         }
         StartOfSecondPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfSecond(date);
         };
         return StartOfSecondPipe;
@@ -2292,6 +2589,9 @@
             this.localeChanged$.unsubscribe();
         };
         StartOfWeekPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfWeek(date, calculateLocale(options, this.config));
         };
         return StartOfWeekPipe;
@@ -2319,6 +2619,9 @@
         function StartOfYearPipe() {
         }
         StartOfYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfYear(date);
         };
         return StartOfYearPipe;
@@ -2365,6 +2668,9 @@
         function StartOfDecadePipe() {
         }
         StartOfDecadePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfDecade(date);
         };
         return StartOfDecadePipe;
@@ -2395,6 +2701,9 @@
             this.localeChanged$.unsubscribe();
         };
         StartOfWeekYearPipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfWeekYear(date, calculateLocale(options, this.config));
         };
         return StartOfWeekYearPipe;
@@ -2422,6 +2731,9 @@
         function SubDaysPipe() {
         }
         SubDaysPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subDays(date, amount);
         };
         return SubDaysPipe;
@@ -2445,6 +2757,9 @@
         function SubHoursPipe() {
         }
         SubHoursPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subHours(date, amount);
         };
         return SubHoursPipe;
@@ -2468,6 +2783,9 @@
         function SubISOWeekYearsPipe() {
         }
         SubISOWeekYearsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subISOWeekYears(date, amount);
         };
         return SubISOWeekYearsPipe;
@@ -2491,6 +2809,9 @@
         function SubMillisecondsPipe() {
         }
         SubMillisecondsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subMilliseconds(date, amount);
         };
         return SubMillisecondsPipe;
@@ -2514,6 +2835,9 @@
         function SubMinutesPipe() {
         }
         SubMinutesPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subMinutes(date, amount);
         };
         return SubMinutesPipe;
@@ -2537,6 +2861,9 @@
         function SubMonthsPipe() {
         }
         SubMonthsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subMonths(date, amount);
         };
         return SubMonthsPipe;
@@ -2560,6 +2887,9 @@
         function SubQuartersPipe() {
         }
         SubQuartersPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subQuarters(date, amount);
         };
         return SubQuartersPipe;
@@ -2583,6 +2913,9 @@
         function SubSecondsPipe() {
         }
         SubSecondsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subSeconds(date, amount);
         };
         return SubSecondsPipe;
@@ -2606,6 +2939,9 @@
         function SubWeeksPipe() {
         }
         SubWeeksPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subWeeks(date, amount);
         };
         return SubWeeksPipe;
@@ -2629,6 +2965,9 @@
         function SubYearsPipe() {
         }
         SubYearsPipe.prototype.transform = function (date, amount) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return subYears(date, amount);
         };
         return SubYearsPipe;
@@ -2652,6 +2991,12 @@
         function IsAfterPipe() {
         }
         IsAfterPipe.prototype.transform = function (date, dateToCompare) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return isAfter(date, dateToCompare);
         };
         return IsAfterPipe;
@@ -2675,6 +3020,12 @@
         function IsBeforePipe() {
         }
         IsBeforePipe.prototype.transform = function (date, dateToCompare) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return isBefore(date, dateToCompare);
         };
         return IsBeforePipe;
@@ -2698,6 +3049,9 @@
         function IsDatePipe() {
         }
         IsDatePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isDate(date);
         };
         return IsDatePipe;
@@ -2721,6 +3075,12 @@
         function IsEqualPipe() {
         }
         IsEqualPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return isEqual(dateLeft, dateRight);
         };
         return IsEqualPipe;
@@ -2744,6 +3104,9 @@
         function IsFuturePipe() {
         }
         IsFuturePipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isFuture(date);
         };
         return IsFuturePipe;
@@ -2767,6 +3130,9 @@
         function IsPastPipe() {
         }
         IsPastPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isPast(date);
         };
         return IsPastPipe;
@@ -2790,6 +3156,9 @@
         function IsValidPipe() {
         }
         IsValidPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isValid(date);
         };
         return IsValidPipe;
@@ -2813,6 +3182,9 @@
         function IsTodayPipe() {
         }
         IsTodayPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isToday(date);
         };
         return IsTodayPipe;
@@ -2836,6 +3208,9 @@
         function IsTomorrowPipe() {
         }
         IsTomorrowPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isTomorrow(date);
         };
         return IsTomorrowPipe;
@@ -2859,6 +3234,9 @@
         function IsWeekendPipe() {
         }
         IsWeekendPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return isWeekend(date);
         };
         return IsWeekendPipe;
@@ -2882,6 +3260,12 @@
         function IsSameMonthPipe() {
         }
         IsSameMonthPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return isSameMonth(dateLeft, dateRight);
         };
         return IsSameMonthPipe;
@@ -2986,6 +3370,12 @@
         function IsSameYearPipe() {
         }
         IsSameYearPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return isSameYear(dateLeft, dateRight);
         };
         return IsSameYearPipe;
@@ -3009,6 +3399,12 @@
         function DifferenceInCalendarQuartersPipe() {
         }
         DifferenceInCalendarQuartersPipe.prototype.transform = function (dateLeft, dateRight) {
+            if (typeof dateLeft === 'string') {
+                dateLeft = new Date(dateLeft);
+            }
+            if (typeof dateRight === 'string') {
+                dateRight = new Date(dateRight);
+            }
             return differenceInCalendarQuarters(dateLeft, dateRight);
         };
         return DifferenceInCalendarQuartersPipe;
@@ -3032,6 +3428,9 @@
         function GetISOWeekYearPipe() {
         }
         GetISOWeekYearPipe.prototype.transform = function (date) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getISOWeekYear(date);
         };
         return GetISOWeekYearPipe;
@@ -3087,11 +3486,17 @@
         }
         FormatRelativePurePipe.prototype.transform = function (date, baseDate, options) {
             if (baseDate === void 0) { baseDate = new Date(); }
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof baseDate === 'string') {
+                baseDate = new Date(baseDate);
+            }
             var formatRelativeLocale = {
                 lastWeek: 'eeee',
-                yesterday: '\'Gestern\'',
-                today: '\'Heute\'',
-                tomorrow: '\'Morgen\'',
+                yesterday: "'Gestern'",
+                today: "'Heute'",
+                tomorrow: "'Morgen'",
                 nextWeek: 'eeee',
                 other: 'eeee'
             };
@@ -3123,6 +3528,12 @@
             this.config = config;
         }
         FormatDistancePurePipe.prototype.transform = function (date, dateToCompare, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return formatDistance(date, dateToCompare, calculateLocale(options, this.config));
         };
         return FormatDistancePurePipe;
@@ -3150,6 +3561,12 @@
             this.config = config;
         }
         FormatDistanceStrictPurePipe.prototype.transform = function (date, dateToCompare, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
+            if (typeof dateToCompare === 'string') {
+                dateToCompare = new Date(dateToCompare);
+            }
             return formatDistanceStrict(date, dateToCompare, calculateLocale(options, this.config));
         };
         return FormatDistanceStrictPurePipe;
@@ -3177,6 +3594,9 @@
             this.config = config;
         }
         FormatDistanceToNowPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return formatDistanceToNow(date, calculateLocale(options, this.config));
         };
         return FormatDistanceToNowPurePipe;
@@ -3204,6 +3624,9 @@
             this.config = config;
         }
         GetWeekPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeek(date, calculateLocale(options, this.config));
         };
         return GetWeekPurePipe;
@@ -3231,6 +3654,9 @@
             this.config = config;
         }
         GetWeekOfMonthPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeekOfMonth(date, calculateLocale(options, this.config));
         };
         return GetWeekOfMonthPurePipe;
@@ -3258,6 +3684,9 @@
             this.config = config;
         }
         GetWeeksInMonthPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeeksInMonth(date, calculateLocale(options, this.config));
         };
         return GetWeeksInMonthPurePipe;
@@ -3285,6 +3714,9 @@
             this.config = config;
         }
         GetWeekYearPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return getWeekYear(date, calculateLocale(options, this.config));
         };
         return GetWeekYearPurePipe;
@@ -3312,6 +3744,9 @@
             this.config = config;
         }
         StartOfWeekPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfWeek(date, calculateLocale(options, this.config));
         };
         return StartOfWeekPurePipe;
@@ -3339,6 +3774,9 @@
             this.config = config;
         }
         StartOfWeekYearPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return startOfWeekYear(date, calculateLocale(options, this.config));
         };
         return StartOfWeekYearPurePipe;
@@ -3366,6 +3804,9 @@
             this.config = config;
         }
         LastDayOfWeekPurePipe.prototype.transform = function (date, options) {
+            if (typeof date === 'string') {
+                date = new Date(date);
+            }
             return lastDayOfWeek(date, calculateLocale(options, this.config));
         };
         return LastDayOfWeekPurePipe;

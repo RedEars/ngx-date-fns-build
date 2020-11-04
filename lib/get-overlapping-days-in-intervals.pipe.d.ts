@@ -1,12 +1,11 @@
 import { PipeTransform } from '@angular/core';
-import { DateFnsInputDate } from './types';
 export declare class GetOverlappingDaysInIntervalsPipe implements PipeTransform {
     transform(intervalLeft: {
-        start: DateFnsInputDate;
-        end: DateFnsInputDate;
+        start: any;
+        end: any;
     }, intervalRight: {
-        start: DateFnsInputDate;
-        end: DateFnsInputDate;
+        start: any;
+        end: any;
     }): number;
 }
 export declare class GetOverlappingDaysInIntervalsPipeModule {

@@ -1,6 +1,5 @@
 import { PipeTransform, ChangeDetectorRef, OnDestroy } from '@angular/core';
 import { DateFnsConfigurationService } from './date-fns-configuration.service';
-import { DateFnsInputDate } from './types';
 import { Locale } from 'date-fns';
 export declare class FormatPipe implements PipeTransform, OnDestroy {
     config: DateFnsConfigurationService;
@@ -8,7 +7,7 @@ export declare class FormatPipe implements PipeTransform, OnDestroy {
     private localeChanged$;
     constructor(config: DateFnsConfigurationService, cd: ChangeDetectorRef);
     ngOnDestroy(): void;
-    transform(date: DateFnsInputDate, dateFormat: string, options?: {
+    transform(date: any, dateFormat: string, options?: {
         locale?: Locale;
         weekStartsOn?: 0 | 1 | 2 | 3 | 4 | 5 | 6;
         firstWeekContainsDate?: number;
