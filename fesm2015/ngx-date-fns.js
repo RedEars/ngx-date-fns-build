@@ -119,10 +119,9 @@ import eachDayOfInterval from 'date-fns/eachDayOfInterval';
 import isSameYear from 'date-fns/isSameYear';
 import differenceInCalendarQuarters from 'date-fns/differenceInCalendarQuarters';
 import getISOWeekYear from 'date-fns/getISOWeekYear';
-import { parseISO } from 'date-fns';
 import formatRelative from 'date-fns/formatRelative';
 import de from 'date-fns/locale/de';
-import parseISO$1 from 'date-fns/parseISO';
+import parseISO from 'date-fns/parseISO';
 
 class AddBusinessDaysPipe {
     transform(date, amount) {
@@ -2351,7 +2350,7 @@ class FormatPurePipe {
     }
     transform(date, dateFormat, options) {
         if (typeof date === 'string') {
-            date = parseISO(date);
+            date = new Date(date);
         }
         return format(date, dateFormat, calculateLocale(options, this.config));
     }
@@ -2661,7 +2660,7 @@ class ParseIsoPipe {
         if (dateString instanceof Date) {
             return dateString;
         }
-        return parseISO$1(dateString, options);
+        return parseISO(dateString, options);
     }
 }
 ParseIsoPipe.decorators = [
